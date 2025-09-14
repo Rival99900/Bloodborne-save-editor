@@ -43,12 +43,12 @@ function Stat({ stat, editedStats, setEditedStats, width }) {
           value={value}
           onChange={(e) => {
             const { value: newValue } = e.target;
-            if (newValue > 999999999) {
-              setValue(999999999);
+            if (newValue > 2147483647) {
+              setValue(2147483647);
 
               editedStats.stats.find(
                 (x) => x.name === stat.name
-              ).value = 999999999;
+              ).value = 2147483647;
             } else {
               setValue(newValue);
 
